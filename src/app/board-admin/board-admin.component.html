@@ -1,0 +1,7 @@
+
+<div *ngIf="content == 'Error: Unauthorized' ">
+  <app-notfound></app-notfound>
+</div>
+<div *ngIf="content != 'Error: Unauthorized' ">
+  <app-list-rooms ></app-list-rooms>
+</div>

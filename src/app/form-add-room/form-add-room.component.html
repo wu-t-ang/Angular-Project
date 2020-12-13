@@ -1,0 +1,101 @@
+<main id="contact_page_style_2">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8">
+        <div class="main_title  a_left">
+          <h2>+ADD Room</h2>
+        </div>
+        <form id="contact-form-page" [formGroup]="RoomForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="form-group col-md-6 col-sm-6">
+              <label class="control-label">N°Room : </label>
+              <input type="number" formControlName="num_room" class="form-control" name="num_room" placeholder="N°Room">
+              <div class="alert alert-danger" *ngIf="RoomForm.get('num_room').errors && RoomForm.controls['num_room'].touched" >
+                <div *ngIf="RoomForm.controls['num_room'].hasError('required')">
+                  N°Room is required
+                </div>
+
+            </div>
+
+
+
+
+            </div>
+
+
+
+            <div class="form-group col-md-6 col-sm-6">
+              <label class="control-label">Price : </label>
+              <input type="number"  formControlName="prix_room" class="form-control" name="prix_room" placeholder="Price">
+              <div class="alert alert-danger" *ngIf="RoomForm.get('prix_room').errors && RoomForm.controls['prix_room'].touched" >
+                <div *ngIf="RoomForm.controls['prix_room'].hasError('required')">
+                  Price of the room is required
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+            <div class="form-group col-md-6 col-sm-6">
+              <label class="control-label">Type</label>
+
+              <select  formControlName="type" class="form-control" >
+
+                <option value="SINGLE">SINGLE</option>
+                <option value="DOUBLE">DOUBLE</option>
+                <option value="DELUX">DELUX</option>
+              </select>
+
+              <div class="alert alert-danger" *ngIf="RoomForm.get('type').errors && RoomForm.controls['type'].touched" >
+                <div *ngIf="RoomForm.controls['type'].hasError('required')">
+                  Type of the room is required
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+              <label class="control-label" >Image  : </label>
+              <input type="file" (change)="onFileChanged($event)" formControlName="nom_image" class="form-control">
+
+              <div class="alert alert-danger" *ngIf="RoomForm.get('nom_image').errors && RoomForm.controls['nom_image'].touched" >
+                <div *ngIf="RoomForm.controls['nom_image'].hasError('required')">
+                  Image of the room is required
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+              <label class="control-label">Description</label>
+              <textarea formControlName="description" class="form-control" name="description" placeholder="Description"></textarea>
+              <div class="alert alert-danger" *ngIf="RoomForm.get('description').errors && RoomForm.controls['description'].touched" >
+                <div *ngIf="RoomForm.controls['description'].hasError('required')">
+                  Description is required
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+              <button type="submit"  [disabled]="RoomForm.invalid"class="button  btn_blue mt35 upper pull-right"> <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Done</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>
+</main>

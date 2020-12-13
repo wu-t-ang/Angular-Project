@@ -1,0 +1,26 @@
+
+<figure class="g_item col-md-3 col-sm-6 {{room.type}}" *ngIf="(prix_input>room.prix_room || prix_input==0 || prix_input == null) && (room.etat == 'non reserve' || access == true )">
+
+    <img [src]="retrievedImage"  class="img-responsive" alt="Image">
+
+  <figcaption>
+<div>
+    <h4> N° : {{room.num_room}}</h4>
+</div>
+    <div>
+      <span> <h4>{{room.description}}</h4></span>
+      </div>
+  <div>
+    <span> <h4 style="color: red"> Price : {{room.prix_room}} dt</h4></span>
+  </div>
+    <br>
+    <button class="button btn_sm btn_blue" [routerLink]="['detail',room.id]" >Detail</button>
+    <button *ngIf="Role == 'ROLE_ADMIN'" class="button btn_sm btn_dark" (click)="delete_room(room.id)" >Delete</button>
+    <div [hidden]="access">
+      <button *ngIf="Role == 'ROLE_USER'" class="button btn_sm btn_dark" (click)="reserver(room.id)" >Reserver</button>
+
+    </div>
+
+  </figcaption>
+</figure>
+

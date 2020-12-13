@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-4">
+<div class="main_title t_style5 l_blue a_left">
+  <h2>Username :</h2>
+</div>
+  <div class=" mt_blue a_center">
+  <h3 >{{ curentuser.username}}</h3>
+  </div>
+<div class="main_title t_style5 l_blue a_left">
+  <h2>Email :</h2>
+</div>
+<div class=" mt_blue a_center">
+  <h3 >{{ curentuser.email}} </h3>
+</div>
+</div>
+</div>
+
+
+
+<main id="gallery">
+
+  <div class="container">
+    <div class="row">
+      <h2>My Rooms :</h2>
+      <div class="grid gallery_items image-gallery" >
+        <!-- ITEM -->
+
+
+        <app-room  [access]="true"  *ngFor="let room of listrooms" [room]="room"></app-room>
+
+
+      </div>
+    </div>
+  </div>
+</main>

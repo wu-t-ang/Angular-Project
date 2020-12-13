@@ -1,0 +1,19 @@
+<section class="white_bg" id="rooms">
+  <div class="container">
+
+    <div class="main_title mt_wave a_center">
+      <h2>OUR FAVORITE ROOMS</h2>
+    </div>
+    <p class="main_description a_center">You'll have a wonderful time at one of these 5-star hotels. </p>
+
+    <div class="row">
+
+<app-room-top *ngFor="let room of list_Rooms"  [room]="room" ></app-room-top>
+
+
+    </div>
+    <div class="mt40 a_center">
+      <a class="button btn_sm btn_yellow" href="/rooms"  routerLink="rooms" >VIEW ROOMS LIST</a>
+    </div>
+  </div>
+</section>

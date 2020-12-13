@@ -1,0 +1,73 @@
+<div *ngIf="Role == 'ROLE_ADMIN'" class="page_title gradient_overlay" style="background: url(../../assets/f/images/page_title_bg.jpg);">
+  <div class="container">
+    <div class="inner">
+      <button class="button btn_yellow bb" (click)="afficher_form()">ADD Room </button>
+      <div *ngIf="afficher == true">
+
+
+        <app-form-add-room (notifacation) = "updatelist($event)"></app-form-add-room>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- =========== PAGE TITLE ========== -->
+
+
+<div class="page_title gradient_overlay" style="background: url(../../assets/f/images/page_title_bg.jpg);">
+  <div class="container">
+    <div class="inner">
+      <h1>Our Rooms</h1>
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li>Our Rooms</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="hbf">
+  <div class="container">
+    <div class="inner">
+      <form id="booking-form">
+
+        <div class="col-md-10 ">
+          <div class="form-group">
+            <label>Search By Price
+              <a href="#" title="Your Email" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Recherche"> <i class="label_icon_info fa fa-info-circle"></i></a>
+            </label>
+            <input [(ngModel)]="prix" class="form-control" name="booking-email" type="number" placeholder="Recherche">
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<main id="gallery">
+
+
+  <div class="container">
+    <div class="grid_filters">
+      <a href="#" data-filter="*" class="button btn_sm btn_blue active">ALL</a>
+      <a href="#" data-filter=".SINGLE" class="button btn_sm btn_blue">SINGLE</a>
+      <a href="#" data-filter=".DOUBLE" class="button btn_sm btn_blue">DOUBLE</a>
+      <a href="#" data-filter=".DELUX" class="button btn_sm btn_blue">DELUX</a>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="grid gallery_items image-gallery" >
+        <!-- ITEM -->
+
+      <div>
+         <app-room (notifacation)="updatelist($event)" [prix_input]="prix" *ngFor="let room of list_Rooms" [room]="room"></app-room>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>

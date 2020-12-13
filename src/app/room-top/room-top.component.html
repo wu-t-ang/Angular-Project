@@ -1,0 +1,16 @@
+<div class="col-md-4">
+  <article class="room">
+    <figure>
+      <div class="price"> <span> {{room.prix_room}}/ night</span></div>
+      <a class="hover_effect h_blue h_link" [routerLink]="['detail',room.id]">
+        <img [src]="retrievedImage" class="img-responsive" alt="Image">
+      </a>
+      <figcaption>
+        <h4><a [routerLink]="['detail',room.id]">{{room.type}} Room</a></h4>
+
+
+        <span class="f_right"><a [routerLink]="['detail',room.id]"  class="button btn_sm btn_blue">VIEW DETAILS</a></span>
+      </figcaption>
+    </figure>
+  </article>
+</div>

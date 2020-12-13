@@ -1,0 +1,84 @@
+<!-- =========== PAGE TITLE ========== -->
+<div class="page_title gradient_overlay" style="background: url(../../assets/f/images/page_title_bg.jpg);">
+  <div class="container">
+    <div class="inner">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <h1>{{room.type}}  Room</h1>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Rooms</li>
+            <li>{{room.type}} Room</li>
+          </ol>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="price">
+            <div class="inner">
+                  {{room.prix_room}}dt<span>per night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========== MAIN ========== -->
+<main id="room_page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <img  [src]="retrievedImage" alt="Image">
+        <div class="main_title mt50">
+          <h2>ABOUT HOTEL ZANTE</h2>
+
+
+
+        </div>
+
+        <p>{{room.description}}</p>
+
+        <div class="main_title t_style a_left s_title mt50">
+          <div class="c_inner">
+            <h2 class="c_title">ROOM SERVICES</h2>
+          </div>
+        </div>
+        <div class="room_facilitys_list">
+          <div class="all_facility_list">
+            <div class="col-sm-4 nopadding">
+              <ul class="list-unstyled">
+
+                <li *ngIf="room.type=='DOUBLE'" ><i class="fa fa-check"></i>Double Bed</li>
+                <li *ngIf="room.type=='SINGLE'" ><i class="fa fa-check"></i>Single Bed</li>
+                <li *ngIf="room.type=='DELUX'" ><i class="fa fa-check"></i>TRIPLE Bed</li>
+                <li><i class="fa fa-check"></i>80 Sq mt</li>
+                <li *ngIf="room.type=='DOUBLE'"><i class="fa fa-check"></i>2 Persons</li>
+                <li *ngIf="room.type=='SINGLE'"><i class="fa fa-check"></i>1 Person</li>
+                <li *ngIf="room.type=='DELUX'"><i class="fa fa-check"></i>6 Persons</li>
+                <li><i class="fa fa-check"></i>Free Internet</li>
+              </ul>
+            </div>
+            <div class="col-sm-4 nopadding">
+              <ul class="list-unstyled">
+                <li><i class="fa fa-check"></i>Free Wi-Fi</li>
+                <li><i class="fa fa-check"></i>Breakfast Include</li>
+                <li><i class="fa fa-check"></i>Private Balcony</li>
+                <li class="no"><i class="fa fa-times"></i>Free Newspaper</li>
+              </ul>
+            </div>
+            <div class="col-sm-4 nopadding_left">
+              <ul class="list-unstyled">
+                <li class="no"><i class="fa fa-times"></i>Flat Screen Tv</li>
+                <li><i class="fa fa-check"></i>Full Ac</li>
+                <li class="no"><i class="fa fa-times"></i>Beach View</li>
+                <li><i class="fa fa-check"></i>Room Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</main>
